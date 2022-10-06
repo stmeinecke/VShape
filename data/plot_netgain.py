@@ -42,8 +42,8 @@ ax00 = plt.subplot(gs[0,:])
 plt.grid(c=gridcolor)
 
 
-dataFML = np.loadtxt('out_netGain')
-tau01 = 0.235
+dataFML = np.loadtxt('out_simpleTS')
+tau01 = 0.25
 
 
 Qshift = 5.0
@@ -68,18 +68,6 @@ tshift = kpos*dt+0.5
 
 
 
-
-#plt.plot(dataFML[:,0]-dataFML[0,0],dataFML[:,1],color=pcolor)
-
-#sh = 0.21
-#sh = 2*tau01
-sh = 2*0.235
-
-
-plt.plot(np.array([0.0,0.5,1.0,1.5,2.0,2.5,3.0])+sh,[Qshift,0.0,Qshift,0.0,Qshift,0.0,Qshift], ls='--', color='purple', alpha=0.5)
-
-#plt.plot(np.array([0.0,0.5,1.0,1.5,2.0,2.5,3.0])-sh,[Qshift,0.0,Qshift,0.0,Qshift,0.0,Qshift], ls='--', color='C0', alpha=0.5)
-#plt.plot(np.array([0.0,0.5,1.0,1.5,2.0,2.5,3.0])+sh,[Qshift,0.0,Qshift,0.0,Qshift,0.0,Qshift], ls='--', color='C0', alpha=0.5)
 plt.plot(np.array([0.0,0.5,1.0,1.5,2.0,2.5,3.0]),[Qshift,0.0,Qshift,0.0,Qshift,0.0,Qshift], ls='--', color='C0', alpha=0.5)
 
 plt.axhline(y=0.0, ls=':', c='k')
@@ -170,94 +158,13 @@ ax10.xaxis.set_minor_locator(ticker.MultipleLocator(0.1))
 #ax10.xaxis.set_major_formatter(ticker.NullFormatter())
 #ax10.xaxis.set_minor_formatter(ticker.NullFormatter())
 
-ax10.yaxis.set_major_locator(ticker.MultipleLocator(0.2))
-ax10.yaxis.set_minor_locator(ticker.MultipleLocator(0.04))
+#ax10.yaxis.set_major_locator(ticker.MultipleLocator(0.2))
+#ax10.yaxis.set_minor_locator(ticker.MultipleLocator(0.04))
 #ax10.yaxis.set_major_formatter(ticker.NullFormatter())
 #ax10.yaxis.set_minor_formatter(ticker.NullFormatter())
 
 plt.text(labeltextx, labeltexty,r'(c)', horizontalalignment='left', verticalalignment='top', transform=ax10.transAxes)
 
-
-
-###################################################################################################################
-###################################################################################################################
-
-#ax01 = plt.subplot(gs[0,1])
-#plt.grid(c=gridcolor)
-
-
-#dataFML = np.loadtxt('out_simpleTS_PC2_J2.5')
-##dataFML = np.loadtxt('out_simpleTS_HML2_J1.9')
-#tshift = 0.51011
-
-##plt.plot(dataFML[:,0]-dataFML[0,0],dataFML[:,1],color=pcolor)
-
-
-#plt.plot([0.0,0.5,1.0,1.5,2.0],[Qshift,0.0,Qshift,0.0,Qshift], ls='--', color='C0', alpha=0.5)
-#plt.plot(np.array([0.0,0.5,1.0,1.5,2.0])+0.25,[Qshift,0.0,Qshift,0.0,Qshift], ls='--', color='C0', alpha=0.5)
-
-
-#plt.axhline(y=0.0, ls=':', c='k')
-#plt.plot(dataFML[:,0]-dataFML[0,0]-tshift,dataFML[:,1]/dataFML[:,1].max(),color=pcolor)
-
-#plt.axhline(y=Gshift, ls=':', c='k')
-#plt.plot(dataFML[:,0]-dataFML[0,0]-tshift,dataFML[:,2]/np.abs(dataFML[:,2]).max()+Gshift,color=Gcolor)
-
-#plt.axhline(y=Qshift, ls=':', c='k')
-#plt.plot(dataFML[:,0]-dataFML[0,0]-tshift,dataFML[:,3]/np.abs(dataFML[:,3]).max()+Qshift,color=Qcolor)
-
-
-#plt.xlim(tmin,tmax)
-#plt.ylim(-0.2,5.7)
-
-##plt.ylabel(r'Intensity $|E|^2$')
-
-#ax01.xaxis.set_ticks_position('both')
-#ax01.yaxis.set_ticks_position('both')
-#ax01.tick_params(which='both', direction='in')
-
-#ax01.xaxis.set_major_locator(ticker.MultipleLocator(0.5))
-#ax01.xaxis.set_minor_locator(ticker.MultipleLocator(0.1))
-#ax01.xaxis.set_major_formatter(ticker.NullFormatter())
-#ax01.xaxis.set_minor_formatter(ticker.NullFormatter())
-
-#ax01.yaxis.set_major_locator(ticker.MultipleLocator(1.0))
-#ax01.yaxis.set_minor_locator(ticker.MultipleLocator(0.2))
-#ax01.yaxis.set_major_formatter(ticker.NullFormatter())
-#ax01.yaxis.set_minor_formatter(ticker.NullFormatter())
-
-
-#plt.title(r'PC2', fontsize=fs)
-#plt.text(labeltextx, labeltexty,r'(b)', horizontalalignment='left', verticalalignment='top', transform=ax01.transAxes)
-
-###########################################
-
-#ax11 = plt.subplot(gs[1,1])
-#plt.grid(c=gridcolor)
-
-
-#plt.plot(dataFML[:,0]-dataFML[0,0]-tshift,dataFML[:,4],color=NGcolor)
-
-#plt.xlim(tmin,tmax)
-
-##plt.ylabel(r'Netgain $\mathcal{G}$')
-#plt.xlabel(r'Time $t$ in $T$')
-
-#ax11.xaxis.set_ticks_position('both')
-#ax11.yaxis.set_ticks_position('both')
-#ax11.tick_params(which='both', direction='in')
-
-#ax11.xaxis.set_major_locator(ticker.MultipleLocator(0.5))
-#ax11.xaxis.set_minor_locator(ticker.MultipleLocator(0.1))
-##ax11.xaxis.set_major_formatter(ticker.NullFormatter())
-##ax11.xaxis.set_minor_formatter(ticker.NullFormatter())
-
-#ax11.yaxis.set_major_locator(ticker.MultipleLocator(0.2))
-#ax11.yaxis.set_minor_locator(ticker.MultipleLocator(0.04))
-#ax11.yaxis.set_major_formatter(ticker.NullFormatter())
-#ax11.yaxis.set_minor_formatter(ticker.NullFormatter())
-
-#plt.text(labeltextx, labeltexty,r'(d)', horizontalalignment='left', verticalalignment='top', transform=ax11.transAxes)
 
 
 
@@ -269,10 +176,7 @@ plt.tight_layout()
 
 
 #strFigName = "netgain"
-#strSecName = "VShape_"
 #plt.savefig(strFigName+".pdf")
 #plt.savefig(strFigName+".png", dpi=600)
-#plt.savefig("../../../figures/"+strSecName+strFigName+".pdf")
-#plt.savefig("../../../figures_png/"+strSecName+strFigName+".png", dpi=600)
 
 plt.show()

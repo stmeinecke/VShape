@@ -69,12 +69,15 @@ int main(int argc, char* argv[]){
   p.nStr = katana::getCmdOption(argv, argv+argc, "-nStr" , 1E-1);
   
   
+  
+  
+  
+  
   bool bool_calc_dt = katana::getCmdOption_bool(argv, argv+argc, "-calc_dt" , false);
   if(bool_calc_dt == true){
     dt = 1.0/(5.0*p.delta);
     cout << "Time step calculated: dt = " << dt << endl;
   }
-  
 
   auto computeParas = [&](){
     p.T12 = 0.5*p.T - p.T01;
