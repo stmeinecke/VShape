@@ -60,7 +60,7 @@ int main(int argc, char* argv[]){
   p.gamma_G = katana::getCmdOption(argv, argv+argc, "-gamma_G" , 0.625)/p.TR;
   p.r_s = katana::getCmdOption(argv, argv+argc, "-r_s" , 2.0);
   p.J_Q = katana::getCmdOption(argv, argv+argc, "-J_Q" , -6)/p.TR;
-  p.J_G = katana::getCmdOption(argv, argv+argc, "-J_G" , 0.04)/p.TR;
+  p.J_G = katana::getCmdOption(argv, argv+argc, "-J_G" , 0.06)/p.TR;
   p.omega = katana::getCmdOption(argv, argv+argc, "-omega" , 0.0)/p.TR;
   
   p.Q_0 = katana::getCmdOption(argv, argv+argc, "-Q_0" , -0.03)/p.TR;
