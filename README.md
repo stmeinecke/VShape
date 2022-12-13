@@ -1,12 +1,23 @@
 # VShape
-C++ simulate code for V-shaped mode-locked semiconductor disk laser
+C++ code to simulate a V-shaped mode-locked semiconductor disk laser
+
+## Setup
+The code can be compiled via the make tool and the (minimal) makefile. The utilized fftw library is provided in the /incl folder.
+
+The code has been tested on a Intel i7-8700 running Debian Bullseye (compiled with gcc-10 (10.2.1-6)).
+
+## Usage
+The simulation code is controlled via command line inputs. The relevant flags can be found in the VShape.cpp file (main file).
+
+For example, the input
+```
+./VShape -TS -intTime 20000 -nout 10
+```
+simulates a time series (`-TS`) with the default system parameters and initial conditions for 20000 time units (`-intTime 20000`) where only every tenth time step is saved (`-nout 10`). Note that only the last 100 time units are saved (can be controlled via `-outTime`). Once finished, the resulting time trace is saved to 'data/out_TS' and a number of time series characteristics are computed and printed to the terminal.
 
 
-The code can be compiled via make tool and the (minimal) makefile. The code has been tested on a Intel i7-8700 running Debian Bullseye (compiled with gcc-10 (10.2.1-6)).
 
-
-The simulation code is controlled via command line inputs.
-
+## References
 
 This code (and prior versions) has been used for the following publications:
 
