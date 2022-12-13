@@ -48,6 +48,8 @@ int main(int argc, char* argv[]){
   
 
   //Time rescaled with T
+  
+  // parameters for [Meinecke, Luedge, PRApplied (2022)]. The small gain and absorption require ~10000 round-trips for the laser to turn on.
   p.TR = katana::getCmdOption(argv, argv+argc, "-TR" , 1.0);
   p.T = katana::getCmdOption(argv, argv+argc, "-T" , 1.0);
   p.T01 = katana::getCmdOption(argv, argv+argc, "-T01" , 0.25);
@@ -70,9 +72,7 @@ int main(int argc, char* argv[]){
   
   
   
-  
-  
-  
+  //in most cases, the gain bandwidth limits the maximum time step. 1/(5.0*delta) has turned out to be usefull heuristic...
   bool bool_calc_dt = katana::getCmdOption_bool(argv, argv+argc, "-calc_dt" , false);
   if(bool_calc_dt == true){
     dt = 1.0/(5.0*p.delta);
@@ -90,16 +90,10 @@ int main(int argc, char* argv[]){
   double max_delay = katana::getCmdOption(argv, argv+argc, "-tau_max" , p.T);
   vars_vec_wdX Xhist(max_delay,dt);
   cout << "History initilized with max_delay / dt: " << (max_delay)/dt << endl;
-
-  //   double intpart;
-//   if(modf(max_delay/dt, &intpart) > 1E-3){
-//     cout << "Caution: max_tau is not an integer multiple of dt" << endl;
-//     Xhist.dt_divides_tau = false;
-//   }
-//   else Xhist.dt_divides_tau = true;
+  
   
   //////////////////////////////////////////
-  //noise
+  //noise  ---- use the flag "-noNoise" to turn of noise
   //////////////////////////////////////////
   
   p.SqrtNoiseStr = sqrt( p.nStr * dt );

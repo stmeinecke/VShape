@@ -23,10 +23,5 @@ struct parameters{
   double nStr;
   double SqrtNoiseStr;
   
-  //delay
-  double tau;
-  double k;
-  double C;
-  
   parameters(){}
 }; 
