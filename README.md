@@ -31,6 +31,8 @@ The delay-differential equations (DDE) solver, on the other hand, has been thoro
 
 This code (and prior versions) has been used for the following publications:
 
+> Meinecke, S. and Lüdge, K., Optimizing the Cavity-Arm Ratio of V-Shaped Semiconductor Disk Lasers, Phys. Rev. Appl. 18, 064070, (2022). [[doi](https://doi.org/10.1103/PhysRevApplied.18.064070)]
+
 > Meinecke, S., Spatio-Temporal Modeling and Device Optimization of Passively Mode-Locked Semiconductor Lasers, Springer Theses, Springer, Cham, ISBN 978-3-030-96247-0, (2022). [[doi](http://dx.doi.org/https://doi.org/10.1007/978-3-030-96248-7)]
 
 > Hausen, J., Meinecke, S., Javaloyes, J., Gurevich, S. V. and Lüdge, K., Phase-Incoherent Photonic Molecules in V-Shaped Mode-Locked Vertical-External-Cavity Surface-Emitting Semiconductor Lasers, Phys. Rev. Appl. 14, 044059, (2020). [[doi](http://dx.doi.org/https://doi.org/10.1103/physrevapplied.14.044059)]
